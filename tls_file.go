@@ -47,6 +47,8 @@ func WatchCertFiles(ctx context.Context, reload <-chan struct{},
 	key := &fileinfo{file: keyfile}
 	cert := &fileinfo{file: certfile}
 
+	checkAndLoadCertFiles(cert, key, cb)
+
 	ticker := time.NewTicker(interval)
 	defer ticker.Stop()
 
