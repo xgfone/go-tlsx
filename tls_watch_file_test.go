@@ -41,7 +41,7 @@ func TestWatchCertFile(t *testing.T) {
 	defer cancel()
 
 	var cert *tls.Certificate
-	WatchCertFiles(ctx, nil, time.Millisecond*500, certfile, keyfile, func(c *tls.Certificate) {
+	WatchCertFile(ctx, nil, time.Millisecond*500, certfile, keyfile, func(c *tls.Certificate) {
 		cert = c
 	})
 
